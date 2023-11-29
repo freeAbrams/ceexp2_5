@@ -3,7 +3,7 @@ import cc.arduino.*;
 import processing.serial.*;
 Arduino arduino;
 int sensorPin = 0;
-int d1 = 150; int d2 = 550;
+int d1 = 200; int d2 = 1000;
 float a = 0; float b = 0;
 float value = 0; float v1 = 0; float v2 = 0;
 float[] buf = null;

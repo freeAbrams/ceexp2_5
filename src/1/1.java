@@ -1,11 +1,11 @@
 import processing.video.*;
-Captrue cam;
+Capture cam;
 void setup()
 {
     size(640, 480);
     String[] cameras = Capture.list();
     printArray(cameras);
-    cam = new Capture(this, cameras[0]);
+    cam = new Capture(this, cameras[29]);
     cam.start();
 }
 void draw()

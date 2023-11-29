@@ -11,17 +11,17 @@ int sensorPin = 0;
 float offset_x = 45.0;
 float offset_y = 0;
 float offset_z = -30.0;
-float a = 119340;
-float b = -11.95;
+float a = 95545;
+float b = -26.255;
 void setup()
 {
     size (1280, 720, P3D);
     String[] cameras = Capture.list();
     printArray(cameras);
     ar = new MultiMarker(this, width, height, "camera_para.dat", NyAR4PsgConfig.CONFIG_PSG);
-    id = ar.addNyIDMarker(1, 60);
+    id = ar.addNyIdMarker(1, 60);
     arduino = new Arduino(this, Arduino.list()[0], 57600);
-    cam = new Capture(this, cameras[0]);
+    cam = new Capture(this, cameras[29]);
     cam.start();
     PFont font = createFont("MS Gothic", 40, true);
     textFont(font, 40);
@@ -42,7 +42,8 @@ void draw()
         stroke(255, 0, 0, 128);
         line (offset_x, offset_y, offset_z, distance + offset_x, offset_y, offset_z);
         rotateZ(PI);
-        rotateX(-PI/2);
+        rotateY(PI);
+        rotateX(-PI);
         fill(255, 0, 0, 127);
         textSize(40);
         translate(-100, -50);

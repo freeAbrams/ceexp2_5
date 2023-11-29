@@ -1,6 +1,6 @@
 import processing.video.*;
 import jp.nyatla.nyar4psg.*;
-Captrue cam;
+Capture cam;
 MultiMarker ar;
 int id;
 void setup()
@@ -10,10 +10,10 @@ void setup()
     printArray(cameras);
     ar = new MultiMarker(this, width, height, "camera_para.dat", NyAR4PsgConfig.CONFIG_PSG);
     id = ar.addARMarker("patt.hiro", 60);
-    cam = new Capture(this, cameras[0]);
+    cam = new Capture(this, cameras[29]);
     cam.start();
 }
-void draw
+void draw()
 {
     if (cam.available() == false)
     {
